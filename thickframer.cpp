@@ -6,6 +6,7 @@
 // @author          Alcatel
 // @github          https://github.com/arukateru
 // @include         *
+// @exclude         notepad++.exe
 // ==/WindhawkMod==
 
 #include <Windows.h>
@@ -16,7 +17,7 @@ BOOL HasCaptionButtons(HWND hWnd)
 {
     LONG_PTR style = GetWindowLongPtr(hWnd, GWL_STYLE);
 
-    return ((style & WS_CAPTION) == WS_CAPTION) && !(style & (WS_EX_TRANSPARENT));
+    return ((style & WS_CAPTION) == WS_CAPTION) && !(style & (WS_THICKFRAME));
 }
 
 LRESULT CALLBACK CbtHookProc(int nCode, WPARAM wParam, LPARAM lParam)
